@@ -1,0 +1,25 @@
+using System;
+
+namespace Delegate
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a = 1234;
+            ShowMoney shm = Dollar;
+            shm(a * 1.0);
+            shm = Euro;
+            shm(a * 1.15);
+        }
+            public delegate void ShowMoney(double a);
+            public static void Dollar(double a)
+            {
+                Console.WriteLine("{0} dollars", a);
+            }
+            public static void Euro(double a)
+            {
+                Console.WriteLine("{0} euros", a);
+            }
+    }
+}
