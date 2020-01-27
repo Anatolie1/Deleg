@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace IEnumerable
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] array = { 2, 3, 4, 89, 56, 87, 34, 65, 5, 7, 9, 1};
+
+            Console.WriteLine("Give number  : ");
+            int t = Convert.ToInt32(Console.ReadLine());
+            IEnumerable<int> newlist = array.Where((x) => x <= t);
+            foreach (int e in newlist)
+            {
+                Console.WriteLine(e);
+            }              
+            Console.WriteLine("Average is  {0}", array.Where((x) => x <= t).Average());
+        }
+    }
+}
